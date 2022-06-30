@@ -15,7 +15,7 @@ public class ByPass implements IValueTransform {
 	}
 
 	@Override
-	public String transformValue(String s) {
+	public String transformValue(String s, int lvl) {
 		return s;
 	}
 

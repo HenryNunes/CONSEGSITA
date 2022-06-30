@@ -9,8 +9,8 @@ public class Transformer {
 		this.transformer = t;
 	}
 	
-	public Row transform(Row r) {
-		return this.transformer.transform(r);
+	public Row transform(Row r, int S, int I, int T, int A) {
+		return this.transformer.transform(r, S, I, T, A);
 	}
 	
 }

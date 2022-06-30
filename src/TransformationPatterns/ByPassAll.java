@@ -10,7 +10,10 @@ public class ByPassAll implements ITransform {
 	private boolean hasI = false;
 	private boolean hasT = false;
 	private boolean hasA = false;
-	private List<IValueTransform> transformations = new LinkedList<IValueTransform>();
+	private List<IValueTransform> transformationsS = new LinkedList<IValueTransform>();
+	private List<IValueTransform> transformationsI = new LinkedList<IValueTransform>();
+	private List<IValueTransform> transformationsT = new LinkedList<IValueTransform>();
+	private List<IValueTransform> transformationsA = new LinkedList<IValueTransform>();
 	
 	public ByPassAll() {
 		//adicionar aqui as transformacoes
@@ -19,12 +22,30 @@ public class ByPassAll implements ITransform {
 	}
 	
 	@Override
-	public Row transform(Row r) {
+	public Row transform(Row r, int S, int I, int T, int A) {
 		Row resposta = new Row();
 		
-		for(IValueTransform iv : transformations) {
+		for(IValueTransform iv : transformationsS) {
 			int coluna = iv.getColumn();
-			String modifiedString = iv.transformValue(r.getPos(coluna));			
+			String modifiedString = iv.transformValue(r.getPos(coluna), S);			
+			resposta.addValue(modifiedString);
+		}
+		
+		for(IValueTransform iv : transformationsI) {
+			int coluna = iv.getColumn();
+			String modifiedString = iv.transformValue(r.getPos(coluna), S);			
+			resposta.addValue(modifiedString);
+		}
+		
+		for(IValueTransform iv : transformationsT) {
+			int coluna = iv.getColumn();
+			String modifiedString = iv.transformValue(r.getPos(coluna), S);			
+			resposta.addValue(modifiedString);
+		}
+		
+		for(IValueTransform iv : transformationsA) {
+			int coluna = iv.getColumn();
+			String modifiedString = iv.transformValue(r.getPos(coluna), S);			
 			resposta.addValue(modifiedString);
 		}
 		
@@ -53,25 +74,25 @@ public class ByPassAll implements ITransform {
 
 	@Override
 	public void addValueTransformS(IValueTransform t, int pos) {
-		transformations.add(t);
+		transformationsS.add(t);
 		this.hasS = true;
 	}
 
 	@Override
 	public void addValueTransformI(IValueTransform t, int pos) {
-		transformations.add(t);
+		transformationsI.add(t);
 		this.hasI = true;
 	}
 
 	@Override
 	public void addValueTransformT(IValueTransform t, int pos) {
-		transformations.add(t);
+		transformationsT.add(t);
 		this.hasT = true;
 	}
 
 	@Override
 	public void addValueTransformA(IValueTransform t, int pos) {
-		transformations.add(t);
+		transformationsA.add(t);
 		this.hasA = true;
 	}
 

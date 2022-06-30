@@ -28,7 +28,7 @@ public class Facade {
 		return;
 	}
 	
-	public void transform() {
+	public void transform(String src, String dest, String separador) {
 		
 	}
 	
