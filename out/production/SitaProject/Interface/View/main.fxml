@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.Controller.MainController">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="551.0" prefWidth="428.0">
+         <children>
+            <Label layoutX="76.0" layoutY="34.0" text="Select your privacy level:">
+               <font>
+                  <Font name="Arial Black" size="20.0" />
+               </font>
+            </Label>
+            <Slider fx:id="sliderS" blockIncrement="25.0" layoutX="120.0" layoutY="100.0" majorTickUnit="26.0" max="4.0" minorTickCount="25" prefHeight="35.0" prefWidth="275.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+            <Label layoutX="52.0" layoutY="100.0" text="S" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+            </Label>
+            <Slider fx:id="sliderI" blockIncrement="25.0" layoutX="120.0" layoutY="170.0" majorTickUnit="26.0" max="4.0" minorTickCount="25" prefHeight="35.0" prefWidth="275.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+            <Label layoutX="54.0" layoutY="170.0" text="I" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+            </Label>
+            <Slider fx:id="sliderT" blockIncrement="25.0" layoutX="120.0" layoutY="240.0" majorTickUnit="26.0" max="4.0" minorTickCount="25" prefHeight="35.0" prefWidth="275.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+            <Label layoutX="51.0" layoutY="240.0" text="T" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+            </Label>
+            <Slider fx:id="sliderA" blockIncrement="25.0" layoutX="120.0" layoutY="310.0" majorTickUnit="26.0" max="4.0" minorTickCount="25" prefHeight="35.0" prefWidth="275.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+            <Label layoutX="50.0" layoutY="310.0" text="A" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="33.0" layoutY="393.0" text="Source">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="sourceFileName" layoutX="120.0" layoutY="388.0" prefHeight="27.0" prefWidth="217.0" text="No file selected" />
+            <Button fx:id="archiveSelector" layoutX="343.0" layoutY="388.0" mnemonicParsing="false" onAction="#openExplorer" text="Browse">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="applyModel" layoutX="172.0" layoutY="484.0" mnemonicParsing="false" onAction="#transform" prefHeight="25.0" prefWidth="85.0" text="OK">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</GridPane>

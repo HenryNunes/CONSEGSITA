@@ -11,7 +11,7 @@ public class Facade {
 		return true;
 	}
 	public boolean hasA() {
-		return true;
+		return false;
 	}
 	
 	
