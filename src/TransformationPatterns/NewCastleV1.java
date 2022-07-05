@@ -2,20 +2,21 @@ package TransformationPatterns;
 
 import java.util.LinkedList;
 import java.util.List;
+
 import Model.Row;
 
-public class ByPassAll implements ITransform {
+public class NewCastleV1 implements ITransform {
 
-	private boolean hasS = false;
+	private boolean hasS = true;
 	private boolean hasI = false;
-	private boolean hasT = false;
-	private boolean hasA = false;
+	private boolean hasT = true;
+	private boolean hasA = true;
 	private List<IValueTransform> transformationsS = new LinkedList<IValueTransform>();
 	private List<IValueTransform> transformationsI = new LinkedList<IValueTransform>();
 	private List<IValueTransform> transformationsT = new LinkedList<IValueTransform>();
 	private List<IValueTransform> transformationsA = new LinkedList<IValueTransform>();
 	
-	public ByPassAll() {
+	public NewCastleV1() {
 		//adicionar aqui as transformacoes
 		
 		
@@ -24,7 +25,6 @@ public class ByPassAll implements ITransform {
 		
 	}
 	
-	@Override
 	public Row transform(Row r, int S, int I, int T, int A) {
 		Row resposta = new Row();
 		
@@ -68,7 +68,7 @@ public class ByPassAll implements ITransform {
 			resposta.addValue(modifiedString);
 		}
 		
-		return r;//Pq é um bypass
+		return resposta;
 	}
 
 	@Override
