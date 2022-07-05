@@ -1,5 +1,8 @@
 package Control;
 
+import Model.DAO;
+import TransformationPatterns.ByPassAll;
+
 public class Facade {
 	public boolean hasS() {
 		return true;
@@ -29,7 +32,18 @@ public class Facade {
 	}
 	
 	public void transform(String src, String dest, String separador) {
-		
+
+		DAO dao = new DAO(src, dest, separador);
+		ByPassAll byPassAll = new ByPassAll();
+		try {
+			while (true) {
+				dao.writeLine(byPassAll.transform(dao.readLine(), 1, 1, 1, 1));
+			}
+		}
+		catch (Exception ex){
+			ex.printStackTrace();
+		}
+		dao.close();
 	}
 	
 	public int statusLinha() {
