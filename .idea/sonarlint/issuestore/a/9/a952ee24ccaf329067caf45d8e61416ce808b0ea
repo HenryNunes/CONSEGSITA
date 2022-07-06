@@ -1,44 +1,0 @@
-
-r	java:S117&"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß€¿£úÿÿÿÿ8Þˆ„Òœ0
-X	java:S125"<This block of commented-out lines of code should be removed.(„²™í8öˆ„Òœ0
-O
-java:S1172$"2Remove this unused method parameter "actionEvent".(ÃÈÙä8þˆ„Òœ0
-]	java:S1250"<This block of commented-out lines of code should be removed.(•‘ÝŸüÿÿÿÿ8†‰„Òœ0
-;
-java:S1128"Remove this duplicated import.(º»û˜8Ž‰„Òœ0
-W
-java:S1128";Remove this unused import 'javafx.application.Application'.(í™þj8Ž‰„Òœ0
-S
-java:S1128"6Remove this unused import 'javafx.fxml.Initializable'.(™ÎùÆ8Ž‰„Òœ0
-L
-java:S1128	"/Remove this unused import 'javafx.scene.Scene'.(Õü²8Ž‰„Òœ0
-M
-java:S1128"0Remove this unused import 'javafx.scene.layout'.(ôœÙÛ8Ž‰„Òœ0
-Q
-java:S1128"/Remove this unused import 'javafx.stage.Stage'.(æÄ¸²úÿÿÿÿ8–‰„Òœ0
-I
-java:S1128",Remove this unused import 'javafx.geometry'.(Ç²ˆ¹8–‰„Òœ0
-L
-java:S1128"/Remove this unused import 'javafx.scene.paint'.(ŠûÓ’8–‰„Òœ0
-R
-java:S1128"0Remove this unused import 'javafx.scene.canvas'.(‰²†øÿÿÿÿ8–‰„Òœ0
-P
-java:S1128".Remove this unused import 'javafx.scene.text'.(Þ´÷Žüÿÿÿÿ8–‰„Òœ0
-L
-java:S1128"/Remove this unused import 'javafx.scene.Group'.(Ÿ°ô–8–‰„Òœ0
-Q
-java:S1128"/Remove this unused import 'javafx.scene.shape'.(ºöÇ•üÿÿÿÿ8ž‰„Òœ0
-@
-java:S1128"Remove this duplicated import.(î•¯¼ýÿÿÿÿ8ž‰„Òœ0
-;
-java:S1128"Remove this duplicated import.(º»û˜8ž‰„Òœ0
-Q
-java:S1128"/Remove this unused import 'javafx.collections'.(þßÖœþÿÿÿÿ8ž‰„Òœ0
-@
-java:S1128"$Remove this unused import 'java.io'.(¬›ãD8ž‰„Òœ0
-J
-java:S1128"(Remove this unused import 'javax.swing'.(Ìí¿Üüÿÿÿÿ8ž‰„Òœ0
-K
-java:S1128")Remove this unused import 'java.net.URL'.(ñìÁ„üÿÿÿÿ8ž‰„Òœ0
-W
-java:S1128"5Remove this unused import 'java.util.ResourceBundle'.(ýÆ£¯øÿÿÿÿ8¦‰„Òœ0

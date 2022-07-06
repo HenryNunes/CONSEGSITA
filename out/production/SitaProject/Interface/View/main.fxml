@@ -12,7 +12,7 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <Pane prefHeight="551.0" prefWidth="428.0">
+      <Pane prefHeight="678.0" prefWidth="431.0">
          <children>
             <Label layoutX="76.0" layoutY="34.0" text="Select your privacy level:">
                <font>
@@ -54,11 +54,17 @@
                   <Font name="Arial" size="15.0" />
                </font>
             </Button>
-            <Button fx:id="applyModel" layoutX="172.0" layoutY="484.0" mnemonicParsing="false" onAction="#transform" prefHeight="25.0" prefWidth="85.0" text="OK">
+            <Button fx:id="applyModel" layoutX="172.0" layoutY="466.0" mnemonicParsing="false" onAction="#transform" prefHeight="25.0" prefWidth="85.0" text="OK">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>
             </Button>
+            <Label fx:id="progressLabel" contentDisplay="CENTER" disable="true" layoutX="185.0" layoutY="582.0">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Label>
+            <ProgressBar fx:id="progressBar" disable="true" layoutX="114.0" layoutY="618.0" prefWidth="200.0" progress="0.0" />
          </children>
       </Pane>
    </children>

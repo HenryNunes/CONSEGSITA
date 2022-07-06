@@ -5,10 +5,12 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 // https://www.youtube.com/playlist?list=PLd4Jo6d-yhDJDu6z0luwaKpW2QD-jGVGc
 
@@ -19,12 +21,7 @@ public class Main extends Application {
     private static Stage stage;
     private static Scene mainScene;
     private static Facade facade;
-
-    private static String sourceFileName;
-    private static double s;
-    private static double i;
-    private static double t;
-    private static double a;
+    private static BigDecimal value = new BigDecimal("0");
 
     //listeners de quando a tela é alterada
     private static ArrayList<onChangeScreen> listeners = new ArrayList<>();
@@ -49,6 +46,22 @@ public class Main extends Application {
         stage.show(); //mostra o primaryStage
     }
 
+    public static void updateProgress(){
+        BigDecimal valueProgress = facade.getProgress().add(value);
+        value = value.add(new BigDecimal("0.1"));
+        changeScreen("main", valueProgress);
+    }
+
+    public static void setFacade(String sourceFileName, int s, int i, int t, int a) {
+        facade.setS(s);
+        facade.setI(i);
+        facade.setT(t);
+        facade.setA(a);
+        //facade.transform(sourceFileName, sourceFileName, ";");
+        Main.updateProgress();
+
+    }
+
     //métodos para trocar as telas do sistema
     //com parametros
     public static void changeScreen(String newScreen, Object userData){
@@ -67,49 +80,8 @@ public class Main extends Application {
         changeScreen(newScreen, null);
     }
 
-    //getters and setters
-    public static void setFileName(String sfileName){
-        sourceFileName = sfileName;
-    }
-
-    public static String getFileName(){
-        return sourceFileName;
-    }
-
     public static Scene getMainScene() {
         return mainScene;
-    }
-
-    public static double getS() {
-        return s;
-    }
-
-    public static void setS(double s) {
-        Main.s = s;
-    }
-
-    public static double getI() {
-        return i;
-    }
-
-    public static void setI(double i) {
-        Main.i = i;
-    }
-
-    public static double getT() {
-        return t;
-    }
-
-    public static void setT(double t) {
-        Main.t = t;
-    }
-
-    public static double getA() {
-        return a;
-    }
-
-    public static void setA(double a) {
-        Main.a = a;
     }
 
     //alteração de telas com parametro

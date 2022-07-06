@@ -3,6 +3,8 @@ package Control;
 import Model.DAO;
 import TransformationPatterns.ByPassAll;
 
+import java.math.BigDecimal;
+
 public class Facade {
 	public boolean hasS() {
 		return true;
@@ -16,8 +18,7 @@ public class Facade {
 	public boolean hasA() {
 		return false;
 	}
-	
-	
+
 	public void setS(int v) {
 		return;
 	}
@@ -49,4 +50,12 @@ public class Facade {
 	public int statusLinha() {
 		return 0;
 	}
+
+	// criei esse método para atualizar a barra de progresso na interface
+	// ao invés de utilizar o statusLinha, já podemos calcular o tamanho do database e a posição atual
+	// (ou seja, percentagem concluída de processamento) e retornar um número entre 0 e 1
+	// assim só fica necessário atualizar a barra na interface e não fica nenhum cálculo lá (Luana)
+    public BigDecimal getProgress() {
+		return new BigDecimal("0.1");
+    }
 }
