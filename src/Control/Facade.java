@@ -2,7 +2,11 @@ package Control;
 
 import Model.DAO;
 import TransformationPatterns.ByPassAll;
+import TransformationPatterns.NewCastleV1;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.math.BigDecimal;
 
 public class Facade {
@@ -32,13 +36,18 @@ public class Facade {
 		return;
 	}
 	
-	public void transform(String src, String dest, String separador) {
+	public int numberRows = 0;
+	public int currentLine = 0;
 
-		DAO dao = new DAO(src, dest, separador);
-		ByPassAll byPassAll = new ByPassAll();
+
+	public void transform(String src, String dest, String splitter) {
+		numberRows = getNumberRows(src);
+		DAO dao = new DAO(src, dest, splitter);
+		NewCastleV1 motor = new NewCastleV1();
 		try {
 			while (true) {
-				dao.writeLine(byPassAll.transform(dao.readLine(), 1, 1, 1, 1));
+				currentLine++;
+				dao.writeLine(motor.transform(dao.readLine(), 1, 1, 1, 1));
 			}
 		}
 		catch (Exception ex){
@@ -56,6 +65,23 @@ public class Facade {
 	// (ou seja, percentagem concluída de processamento) e retornar um número entre 0 e 1
 	// assim só fica necessário atualizar a barra na interface e não fica nenhum cálculo lá (Luana)
     public BigDecimal getProgress() {
-		return new BigDecimal("0.1");
+		
+		return new BigDecimal(currentLine/numberRows);
     }
+
+	public int getNumberRows(String src){
+		String command = "wc -l " + src;
+		int numberRows = 0;
+		try {
+			Process process = Runtime.getRuntime().exec(command);
+    		BufferedReader in = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+ 			String arr[] = in.readLine().split(" ", 2);
+			numberRows = Integer.parseInt(arr[0]);
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return numberRows;
+	}
 }
