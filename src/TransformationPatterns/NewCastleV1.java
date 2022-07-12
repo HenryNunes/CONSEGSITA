@@ -18,11 +18,9 @@ public class NewCastleV1 implements ITransform {
 	
 	public NewCastleV1() {
 		//adicionar aqui as transformacoes
-		
-		
-		
-		
-		
+		transformationsS.add(new NewCastleSpatialV1());
+		transformationsT.add(new NewCastleV1Temporal());
+		transformationsA.add(new NewCastleActivityV1());
 	}
 	
 	public Row transform(Row r, int S, int I, int T, int A) {
