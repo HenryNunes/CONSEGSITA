@@ -72,7 +72,7 @@ public class MainController implements Initializable{
         sliderS.setDisable(!hasSITA[0]); // hasSITA[0] = facade.hasS()
         sliderI.setDisable(!hasSITA[1]); // hasSITA[1] = facade.hasI()
         sliderT.setDisable(!hasSITA[2]); // hasSITA[2] = facade.hasT()
-        sliderA.setDisable(!hasSITA[3]); // hasSITA[3] = facade.hasSA()
+        sliderA.setDisable(!hasSITA[3]); // hasSITA[3] = facade.hasA()
     }
 
     public void updateProgressBar(Object uData){
@@ -97,11 +97,11 @@ public class MainController implements Initializable{
                 if (uData instanceof BigDecimal){
                     updateProgressBar(uData);
                     if (((BigDecimal) uData).compareTo(new BigDecimal("1")) != 0){
-                        Timeline oneMinuteTimeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
+                        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(20), event -> {
                             Main.updateProgress();
                         }));
-                        oneMinuteTimeline.setCycleCount(1); // Executa apenas uma vez. Toda vez que o método updateProgress() é chamado, verifica novamente.
-                        oneMinuteTimeline.play();
+                        timeline.setCycleCount(1); // Executa apenas uma vez. Toda vez que o método updateProgress() é chamado, verifica novamente.
+                        timeline.play();
                     }
                 }
             }

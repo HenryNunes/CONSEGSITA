@@ -21,7 +21,6 @@ public class Main extends Application {
     private static Stage stage;
     private static Scene mainScene;
     private static Facade facade;
-    private static BigDecimal value = new BigDecimal("0");
 
     //listeners de quando a tela é alterada
     private static ArrayList<onChangeScreen> listeners = new ArrayList<>();
@@ -47,8 +46,7 @@ public class Main extends Application {
     }
 
     public static void updateProgress(){
-        BigDecimal valueProgress = facade.getProgress().add(value);
-        value = value.add(new BigDecimal("0.1"));
+        BigDecimal valueProgress = facade.getProgress();
         changeScreen("main", valueProgress);
     }
 
@@ -57,7 +55,8 @@ public class Main extends Application {
         facade.setI(i);
         facade.setT(t);
         facade.setA(a);
-        //facade.transform(sourceFileName, sourceFileName, ";");
+        String dest = sourceFileName.split("\\.")[0] + "_transformed." + sourceFileName.split("\\.")[1];
+        facade.transform(sourceFileName, dest, ";");
         Main.updateProgress();
 
     }
