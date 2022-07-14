@@ -18,7 +18,13 @@ public class DAO {
 	private Scanner in;
 	private BufferedWriter out;
 	
+	private int line;
+	private int totalLines;
+	
 	public DAO(String src, String dst, String separator) {
+		this.line = 1;
+		this.totalLines = calculateTotalines(src);
+		
 		try{
 			this.separator = separator;
 			this.sourcePath = src;
@@ -39,6 +45,7 @@ public class DAO {
 	public Row readLine() {
 		Row r = new Row();
 		
+		if(in.hasNext())return null;
 		String line = in.nextLine();
 		String[] values = line.split(separator);
 		
@@ -71,5 +78,30 @@ public class DAO {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	public int getTotalLines() {
+		return totalLines;
+	}
+	
+	public int getLine() {
+		return line;
+	}
+	
+	private int calculateTotalines(String src) {
+		int numberRows = 0;
+		try {
+			in = new Scanner(this.srcFile );
+			
+			while(in.hasNext()){
+				in.nextLine();
+				numberRows++;
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+			
+		} finally{
+			in.close();
+		}
+		return numberRows;
 	}
 }
