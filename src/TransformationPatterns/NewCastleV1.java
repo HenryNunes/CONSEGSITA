@@ -8,7 +8,7 @@ import Model.Row;
 public class NewCastleV1 implements ITransform {
 
 	private boolean hasS = true;
-	private boolean hasI = false;
+	private boolean hasI = true;
 	private boolean hasT = true;
 	private boolean hasA = true;
 	private List<IValueTransform> transformationsS = new LinkedList<IValueTransform>();

@@ -1,7 +1,7 @@
 package Control;
 
 import Model.DAO;
-import TransformationPatterns.ByPassAll;
+import Model.Row;
 import TransformationPatterns.NewCastleV1;
 
 import java.io.BufferedReader;
@@ -14,13 +14,13 @@ public class Facade {
 		return true;
 	}
 	public boolean hasI() {
-		return true;
+		return false;
 	}
 	public boolean hasT() {
 		return true;
 	}
 	public boolean hasA() {
-		return false;
+		return true;
 	}
 
 	public void setS(int v) {
@@ -40,14 +40,16 @@ public class Facade {
 	public int currentLine = 0;
 
 
-	public void transform(String src, String dest, String splitter) {
-		numberRows = getNumberRows(src);
+	public void transform(String src, String dest, String splitter, int s, int i, int t, int a) {
 		DAO dao = new DAO(src, dest, splitter);
+		numberRows = dao.getTotalLines();
 		NewCastleV1 motor = new NewCastleV1();
 		try {
 			while (true) {
 				currentLine++;
-				dao.writeLine(motor.transform(dao.readLine(), 1, 1, 1, 1));
+				Row r = dao.readLine();
+ 				motor.transform(r,s,i,t,a);
+				dao.writeLine(r);
 			}
 		}
 		catch (Exception ex){

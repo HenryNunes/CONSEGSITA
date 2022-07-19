@@ -56,7 +56,7 @@ public class Main extends Application {
         facade.setT(t);
         facade.setA(a);
         String dest = sourceFileName.split("\\.")[0] + "_transformed." + sourceFileName.split("\\.")[1];
-        facade.transform(sourceFileName, dest, ";");
+        facade.transform(sourceFileName, dest, ";",s ,i ,t ,a);
         Main.updateProgress();
 
     }
