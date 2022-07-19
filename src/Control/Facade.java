@@ -48,8 +48,8 @@ public class Facade {
 			while (true) {
 				currentLine++;
 				Row r = dao.readLine();
- 				motor.transform(r,s,i,t,a);
-				dao.writeLine(r);
+ 				Row rn = motor.transform(r,s,i,t,a);
+				dao.writeLine(rn);
 			}
 		}
 		catch (Exception ex){
