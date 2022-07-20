@@ -2,9 +2,9 @@ package TransformationPatterns;
 
 import java.util.TreeMap;
 
-public class NewCastleSpatialV1 implements IValueTransform {
+public class NewCastleSpatial implements IValueTransform {
 
-	private int[] columns = {0,1};
+	private final int[] columns = {0,1};
 	
 	@Override
 	public int[] getColumn() {
@@ -21,7 +21,7 @@ public class NewCastleSpatialV1 implements IValueTransform {
 			return "USB" + "; " + "deleted; "; 
 		}
 		if(nivel == 2) {
-			TreeMap<String, String> tree_map = new TreeMap<String, String>();
+			TreeMap<String, String> tree_map = new TreeMap<>();
 			
 			tree_map.put("G.006", "Ground Floor");
 			tree_map.put("G.007", "Ground Floor");
@@ -119,7 +119,7 @@ public class NewCastleSpatialV1 implements IValueTransform {
 			
 		}
 		if(nivel == 3) {
-			TreeMap<String, String> tree_map = new TreeMap<String, String>();
+			TreeMap<String, String> tree_map = new TreeMap<>();
 			
 			tree_map.put("G.006", "G.006");
 			tree_map.put("G.007", "G.007");

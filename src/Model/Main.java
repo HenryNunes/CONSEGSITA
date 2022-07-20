@@ -1,7 +1,7 @@
 package Model;
 
 import TransformationPatterns.ITransform;
-import TransformationPatterns.NewCastleV1;
+import TransformationPatterns.NewCastle;
 
 public class Main {
 
@@ -18,7 +18,7 @@ public class Main {
 		r.addValue("20220630");
 		r.addValue("000426");
 		
-		ITransform trans = new NewCastleV1();
+		ITransform trans = new NewCastle();
 		Row r2 = trans.transform(r, 3, 2, 4, 0);
 		
 		System.out.println(r2.getPos(0));

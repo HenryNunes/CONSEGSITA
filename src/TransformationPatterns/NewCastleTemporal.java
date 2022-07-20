@@ -1,8 +1,8 @@
 package TransformationPatterns;
 
-public class NewCastleV1Temporal implements IValueTransform {
+public class NewCastleTemporal implements IValueTransform {
 
-	private int[] columns = {7, 8};
+	private final int[] columns = {7, 8};
 	
 	@Override
 	public int[] getColumn() {
@@ -21,7 +21,7 @@ public class NewCastleV1Temporal implements IValueTransform {
 			return s[0] + "; deleted; "; //retorna apenas a data
 		}
 		if(nivel == 3) {
-			return s[0] + "; "+ s[1].substring(0,1) + "0000; "; //remove segundos e minutos
+			return s[0] + "; "+ s[1].charAt(0) + "0000; "; //remove segundos e minutos
 		}
 		if(nivel == 4) {
 			//System.out.println(s);

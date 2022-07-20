@@ -9,8 +9,7 @@ import javafx.stage.Stage;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
+
 
 // https://www.youtube.com/playlist?list=PLd4Jo6d-yhDJDu6z0luwaKpW2QD-jGVGc
 
@@ -23,7 +22,7 @@ public class Main extends Application {
     private static Facade facade;
 
     //listeners de quando a tela é alterada
-    private static ArrayList<onChangeScreen> listeners = new ArrayList<>();
+    private static final ArrayList<onChangeScreen> listeners = new ArrayList<>();
 
     public static void main(String[] args) {
         launch(args);
@@ -64,13 +63,9 @@ public class Main extends Application {
     //métodos para trocar as telas do sistema
     //com parametros
     public static void changeScreen(String newScreen, Object userData){
-        switch (newScreen){
-            case "main":
-                stage.setScene(mainScene);
-                notifyAllListeners("main", userData);
-                break;
-            default:
-                break;
+        if ("main".equals(newScreen)) {
+            stage.setScene(mainScene);
+            notifyAllListeners("main", userData);
         }
     }
 

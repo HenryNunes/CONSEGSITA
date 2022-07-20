@@ -5,21 +5,15 @@ import java.util.Scanner;
 
 public class DAO {
 
-	private String sourcePath;
-	private String destinyPath;
 	private String separator;
-
 	private File srcFile;
-	private File destFile;
+	private  File destFile;
 
 	private Scanner in;
 	private BufferedWriter out;
-
-	private int line;
-	private int totalLines;
+	private final int totalLines;
 
 	public DAO(String src, String dst, String separator) {
-		this.line = 1;
 		try {
 			this.totalLines = calculateTotalines(src);
 		} catch (IOException e) {
@@ -28,11 +22,8 @@ public class DAO {
 
 		try {
 			this.separator = separator;
-			this.sourcePath = src;
-			this.destinyPath = dst;
-
-			this.srcFile = new File(this.sourcePath);
-			this.destFile = new File(this.destinyPath);
+			this.srcFile = new File(src);
+			this.destFile = new File(dst);
 
 			in = new Scanner(this.srcFile);
 			out = new BufferedWriter(new FileWriter(this.destFile));
@@ -50,24 +41,21 @@ public class DAO {
 		String line = in.nextLine();
 		String[] values = line.split(separator);
 
-		for (int i = 0; i < values.length; i++) {
-			r.addValue(values[i]);
+		for (String value : values) {
+			r.addValue(value);
 		}
-
 		return r;
 	}
 
 	public void writeLine(Row r) {
-		String newLine = "";
+		StringBuilder newLine = new StringBuilder();
 
-		for (int i = 0; i < r.getColunas(); i++) {
-			newLine = newLine + r.getPos(i) + separator;
+		for (int i = 0; i < r.getColumns(); i++) {
+			newLine.append(r.getPos(i)).append(separator);
 		}
-
-		newLine = newLine + "\n";
-
+		newLine.append("\n");
 		try {
-			out.write(newLine);
+			out.write(newLine.toString());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -87,16 +75,11 @@ public class DAO {
 		return totalLines;
 	}
 
-	public int getLine() {
-		return line;
-	}
-
 	private int calculateTotalines(String src) throws IOException {
-		InputStream is = new BufferedInputStream(new FileInputStream(src));
-		try {
+		try (InputStream is = new BufferedInputStream(new FileInputStream(src))) {
 			byte[] c = new byte[1024];
 			int count = 0;
-			int readChars = 0;
+			int readChars;
 			boolean empty = true;
 			while ((readChars = is.read(c)) != -1) {
 				empty = false;
@@ -107,8 +90,6 @@ public class DAO {
 				}
 			}
 			return (count == 0 && !empty) ? 1 : count;
-		} finally {
-			is.close();
 		}
 	}
 }
