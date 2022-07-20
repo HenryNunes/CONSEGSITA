@@ -38,6 +38,8 @@ public class Facade {
 			for (;;) {
 				currentLine++;
 				Row r = dao.readLine();
+				if (r==null)
+					break;
  				Row rn = motor.transform(r,s,i,t,a);
 				dao.writeLine(rn);
 			}
