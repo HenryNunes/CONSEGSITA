@@ -1,14 +1,0 @@
-
-v
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(«İ¯Ù8 ×ñÜš0
-v
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(§ Šñ8©§Ôœ0
-{
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ˆÁìÎüÿÿÿÿ8ª§Ôœ0
-{
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(¼—Ôüÿÿÿÿ8«§Ôœ0
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜¯¶Ûøÿÿÿÿ8µ§Ôœ0
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜¯¶Ûøÿÿÿÿ8Å§Ôœ0
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜¯¶Ûøÿÿÿÿ8Æ§Ôœ0
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜¯¶Ûøÿÿÿÿ8Æ§Ôœ0
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(æîˆÛøÿÿÿÿ

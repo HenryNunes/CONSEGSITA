@@ -1,8 +1,4 @@
 
-o
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÖÇÈµ
-o
-java:S2293z"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÖÇÈµ
 a
 java:S1192Y"FDefine a constant instead of duplicating this literal "5.009" 3 times.(ÌšØşÿÿÿÿ
 a
@@ -81,8 +77,6 @@ java:S1192c"FDefine a constant instead of duplicating this literal "6.007" 3 ti
 java:S1192O"FDefine a constant instead of duplicating this literal "3.050" 3 times.(áô“ˆ
 \
 java:S1192$"FDefine a constant instead of duplicating this literal "G.044" 3 times.(ó­£´
-e
-java:S1192"JDefine a constant instead of duplicating this literal "deleted; " 3 times.(¤±Òúÿÿÿÿ
 a
 java:S11921"KDefine a constant instead of duplicating this literal "2nd Floor" 16 times.(ÜÑä±
 \
@@ -199,6 +193,6 @@ java:S1192,"FDefine a constant instead of duplicating this literal "1.025" 3 ti
 java:S1192X"FDefine a constant instead of duplicating this literal "5.008" 3 times.(Ğüã•
 \
 java:S1192."FDefine a constant instead of duplicating this literal "1.026" 3 times.(äÄ“’
-f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÖÇÈµ
-f	java:S117z"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÖÇÈµ
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜°»ºüÿÿÿÿ
+k	java:S117z"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜°»ºüÿÿÿÿ
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(æîˆÛøÿÿÿÿ
