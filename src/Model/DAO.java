@@ -51,7 +51,7 @@ public class DAO {
 		StringBuilder newLine = new StringBuilder();
 
 		for (int i = 0; i < r.getColumns(); i++) {
-			newLine.append(r.getPos(i)).append(separator);
+			newLine.append(r.getPos(i));
 		}
 		newLine.append("\n");
 		try {

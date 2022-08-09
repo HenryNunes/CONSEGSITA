@@ -18,7 +18,7 @@ public class NewCastleSpatial implements IValueTransform {
 			return "deleted; deleted; ";
 		}
 		if(nivel == 1) {
-			return "USB" + "; " + "deleted; "; 
+			return "USB; deleted; ";
 		}
 		if(nivel == 2) {
 			TreeMap<String, String> tree_map = new TreeMap<>();
