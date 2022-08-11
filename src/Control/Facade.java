@@ -4,6 +4,7 @@ import Model.DAO;
 import Model.Row;
 import TransformationPatterns.ITransform;
 import TransformationPatterns.NewCastle;
+import TransformationPatterns.Indonesia.CO2DUMP;
 
 import java.math.BigDecimal;
 
@@ -33,7 +34,9 @@ public class Facade {
 	public void transform(String src, String dest, String splitter, int s, int i, int t, int a) {
 		DAO dao = new DAO(src, dest, splitter);
 		numberRows = dao.getTotalLines();
-		ITransform motor = new NewCastle();
+		//ITransform motor = new NewCastle();
+		ITransform motor = new CO2DUMP();
+		
 		try {
 			for (;;) {
 				currentLine++;
